@@ -97,6 +97,53 @@ public class RuleBook : MonoBehaviour
 
     }
 
+    //カードのパッシブ効果処理
+    public void passiveEffectVS(Battler player, Enemy enemy)
+    {
+        // =====================================
+        //  毒ポーション攻撃
+        // =====================================
+        if (0 < enemy.Base.EnemyDebufPoizonTurns)
+        {
+            // 毒効果量算出
+            if (enemy.Base.EnemyDebufPoizonAmount == 0)
+            {
+                // 初回の毒攻撃の場合は毒攻撃初期値
+                enemy.Base.EnemyDebufPoizonAmount = player.PoizonAttackInit;
+            }
+            else
+            {
+                // 2回目以降の毒攻撃の場合は毒攻撃増加量を加算
+                enemy.Base.EnemyDebufPoizonAmount += player.PoizonAttackIncrease;
+            }
+            if (player.PoizonAttackMax < enemy.Base.EnemyDebufPoizonAmount)
+            {
+                // 毒攻撃力上限を超えた場合は毒攻撃力上限に補正
+                enemy.Base.EnemyDebufPoizonAmount = player.PoizonAttackMax;
+            }
+
+            // 毒攻撃・・・毒効果量の固定ダメージ
+            int damage = (int)enemy.Base.EnemyDebufPoizonAmount;
+            enemy.Base.EnemyLife -= damage;
+            message.text = $"{damage}毒ダメージあたえた";
+            if (enemy.Base.EnemyLife < 0)
+            {
+                enemy.Base.EnemyLife = 0;
+            }
+
+            // 毒持続ターン更新
+            enemy.Base.EnemyDebufPoizonTurns--;
+
+            // 毒持続ターンゼロ時の毒効果量リセット処理
+            if (enemy.Base.EnemyDebufPoizonTurns == 0)
+            {
+                // 毒攻撃の初回判定のため、
+                // 持続ターン数が0になった場合はゼロにリセット
+                enemy.Base.EnemyDebufPoizonAmount = 0;
+            }
+        }
+    }
+
     //エネミーの強力攻撃までのカウントダウン
     public void EnemyCountDown(Enemy enemy)
     {

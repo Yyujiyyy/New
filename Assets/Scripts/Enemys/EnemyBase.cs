@@ -17,6 +17,9 @@ public class EnemyBase : ScriptableObject
     [SerializeField] int enemyDefense;
     [SerializeField] int enemyMagicDefense;
     [Space(10)]
+    [SerializeField] float enemyDebufPoizonAmount;      // 受けている毒の効果量
+    [SerializeField] int enemyDebufPoizonTurns;         // 受けている毒の持続ターン
+    [Space(10)]
     [Header("強攻撃")]
     [SerializeField] int enemyCount;
     int Count;
@@ -37,6 +40,8 @@ public class EnemyBase : ScriptableObject
     public int EnemyLifeMax { get => enemyLifeMax; set => enemyLifeMax = value; }
     public int EnemyDefense { get => enemyDefense; set => enemyDefense = value; }
     public int EnemyMagicDefense { get => enemyMagicDefense; set => enemyMagicDefense = value; }
+    public float EnemyDebufPoizonAmount { get => enemyDebufPoizonAmount; set => enemyDebufPoizonAmount = value; }
+    public int EnemyDebufPoizonTurns { get => enemyDebufPoizonTurns; set => enemyDebufPoizonTurns = value; }
     public int EnemyCount { get => enemyCount; set => enemyCount = value; }
     public int Count1 { get => Count; set => Count = value; }
     public int[] Weights1 { get => Weights; set => Weights = value; }

@@ -19,6 +19,8 @@ MonoBehaviour:
   enemyAttack: 25
   enemyDefense: 50
   enemyMagicDefense: 20
+  enemyDebufPoizonAmount: 0
+  enemyDebufPoizonTurns: 0
   enemyCount: 3
   description: "\u5F37\u653B\u6483\u307E\u3067"
   Weights: 000000000000000000000000

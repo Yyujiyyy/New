@@ -16,6 +16,11 @@ public class Battler : MonoBehaviour
     [SerializeField] int life;
     [SerializeField] int defens;
 
+    // 毒関連データ
+    [SerializeField] float poizonAttackInit;      // 毒攻撃力初期値
+    [SerializeField] float poizonAttackMax;       // 毒攻撃力上限
+    [SerializeField] float poizonAttackIncrease;  // 毒攻撃力増加量
+    [SerializeField] int poizonAddTurns;           // 毒付与継続ターン数
 
     public UnityAction OnSubmitAction;
     public UnityAction OnSynthesisAction;
@@ -25,7 +30,10 @@ public class Battler : MonoBehaviour
 
     public int Defens { get => defens; set => defens = value; }
     public int Life { get => life; set => life = value; }
-
+    public float PoizonAttackInit { get => poizonAttackInit; set => poizonAttackInit = value; }
+    public float PoizonAttackMax { get => poizonAttackMax; set => poizonAttackMax = value; }
+    public float PoizonAttackIncrease { get => poizonAttackIncrease; set => poizonAttackIncrease = value; }
+    public int PoizonAddTurns { get => poizonAddTurns; set => poizonAddTurns = value; }
     public BattlerHand Hand { get => hand; }
     public SubmitPosition SubmitPosition { get => submitPosition; }
     //public Card SubmitCard { get => submitPosition.SubmitCard;} 

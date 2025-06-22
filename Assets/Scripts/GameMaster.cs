@@ -230,6 +230,24 @@ public class GameMaster : MonoBehaviour
         gameUI.ShowLifes(player.Life);
         yield return new WaitForSeconds(1.5f);
 
+        StartCoroutine(passiveEffect());
+    }
+
+    // 敵の攻撃後のパッシブ効果
+    IEnumerator passiveEffect()
+    {
+        // パッシブ効果反映
+        ruleBook.passiveEffectVS(player, enemy);
+        gameUI.ShowLifes(player.Life);
+        enemy.EnemyLifeContlloer.lifeReflection(enemy);
+        yield return new WaitForSeconds(1.2f);
+        if (enemy.Base.EnemyLife == 0)
+        {
+            ShowResult();
+            yield break;
+        }
+
+        // 次ターンに向けてのリセットと準備
         gameUI.MassagePanel.SetActive(false);
         SetupNextTurn();
     }

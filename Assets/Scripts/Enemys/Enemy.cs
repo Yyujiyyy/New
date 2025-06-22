@@ -26,6 +26,8 @@ public class Enemy : MonoBehaviour
     public void SetEnemy(EnemyBase enemyBase)
     {
         enemyBase.EnemyLife = enemyBase.EnemyLifeMax;
+        enemyBase.EnemyDebufPoizonAmount = 0;           // 毒効果量をゼロに初期化
+        enemyBase.EnemyDebufPoizonTurns = 0;            // 毒効果ターン数をゼロに初期化
         enemyBase.Count1 = enemyBase.EnemyCount;
         Base = enemyBase;
         icon.sprite = enemyBase.Icon;
