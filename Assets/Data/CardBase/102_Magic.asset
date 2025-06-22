@@ -15,7 +15,6 @@ MonoBehaviour:
   displayName: "\u9B54\u6CD5"
   cardName: Magic
   synthesisType: 0
-  type: 0
   id: 102
   icon: {fileID: 21300000, guid: ae397095eac9fc443a64911c33a86f8f, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
@@ -35,3 +34,13 @@ MonoBehaviour:
     flontCard: Shield
   - buff: 1.5
     flontCard: Potion
+  - buff: 2
+    flontCard: Blood
+  - buff: 2
+    flontCard: Sword_Plus
+  - buff: 0.7
+    flontCard: Magic_Plus
+  - buff: 1.5
+    flontCard: Shield_Plus
+  - buff: 1.5
+    flontCard: Potion_Plus

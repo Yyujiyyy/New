@@ -15,7 +15,6 @@ MonoBehaviour:
   displayName: "\u5263"
   cardName: Sword
   synthesisType: 0
-  type: 0
   id: 101
   icon: {fileID: 21300000, guid: d7d3e2169b005864a95c27edc05164ad, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
@@ -35,3 +34,13 @@ MonoBehaviour:
     flontCard: Shield
   - buff: 1.5
     flontCard: Potion
+  - buff: 1.5
+    flontCard: Blood
+  - buff: 1.5
+    flontCard: Sword_Plus
+  - buff: 0.9
+    flontCard: Magic_Plus
+  - buff: 1.5
+    flontCard: Shield_Plus
+  - buff: 1.5
+    flontCard: Potion_Plus

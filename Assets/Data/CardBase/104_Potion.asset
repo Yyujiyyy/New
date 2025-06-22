@@ -15,7 +15,6 @@ MonoBehaviour:
   displayName: "\u30DD\u30FC\u30B7\u30E7\u30F3"
   cardName: Potion
   synthesisType: 0
-  type: 2
   id: 104
   icon: {fileID: 21300000, guid: c1e43fb0bb601644f8d5de01ccff0da4, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
@@ -35,3 +34,11 @@ MonoBehaviour:
     flontCard: Shield
   - buff: 1
     flontCard: Potion
+  - buff: 1.25
+    flontCard: Blood
+  - buff: 1.25
+    flontCard: Sword_Plus
+  - buff: 1.25
+    flontCard: Magic_Plus
+  - buff: 1.5
+    flontCard: Shield_Plus

@@ -25,4 +25,6 @@ MonoBehaviour:
     defense_Status: 0
     heal_Status: 0
   uniqueEffect: {fileID: 11400000, guid: c4cc26c33a2981d42a43d6ddaa10b9a1, type: 2}
-  flontBuff: []
+  flontBuff:
+  - buff: 0
+    flontCard: 
