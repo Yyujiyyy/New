@@ -15,10 +15,9 @@ MonoBehaviour:
   displayName: "\u4EE3\u511F\u653B\u6483"
   cardName: Conpensation
   synthesisType: 0
-  type: 0
   id: 107
   icon: {fileID: 0}
-  color: {r: 1, g: 1, b: 1, a: 0}
+  color: {r: 1, g: 1, b: 1, a: 1}
   description: 
   cardStatus:
     attack_Status: 30
