@@ -25,6 +25,7 @@ public class GameUI : MonoBehaviour
     [SerializeField] GameObject proceedButton;
     [SerializeField] GameObject returnButton;
     [SerializeField] GameObject massagePanel;
+    [SerializeField] public Text MassageText;
     [SerializeField] Text kekka;
 
     public GameObject RulePanel { get => rulePanel; set => rulePanel = value; }
@@ -67,7 +68,7 @@ public class GameUI : MonoBehaviour
     }
 
     //ゲームの勝敗をパネルで表示
-    public void ShowGameResult(string result , int turnCount)
+    public void ShowGameResult(string result, int turnCount)
     {
         resultPanel.SetActive(true);
         resultText.text = result;
@@ -174,4 +175,16 @@ public class GameUI : MonoBehaviour
                 break;
         }
     }
+    public void ShowMessage(string text)
+    {
+        MassageText.text = text;
+        massagePanel.SetActive(true);
+    }
+
+    public void HideMessage()
+    {
+        massagePanel.SetActive(false);
+    }
+
 }
+

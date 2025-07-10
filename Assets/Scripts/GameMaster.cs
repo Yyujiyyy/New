@@ -10,6 +10,7 @@ using UnityEngine.XR;
 
 public class GameMaster : MonoBehaviour
 {
+    [SerializeField] Anesthesia anesthesia;
     [SerializeField] Battler player;
     [SerializeField] CardGenerator cardGenerator;
     [SerializeField] EnemyGenerator enemyGenerator;
@@ -217,6 +218,22 @@ public class GameMaster : MonoBehaviour
         gameUI.MassagePanel.SetActive(true);
         yield return StartCoroutine(gameUI.Sengen(enemy));
 
+        if (enemy.Base.IsSleeping)
+        {
+            if (enemy.ContinueSleep(anesthesia.sleepRate))
+            {
+                gameUI.MassageText.text = ("敵は眠っている……");
+                yield return new WaitForSeconds(1.5f);
+                gameUI.MassagePanel.SetActive(false);
+                SetupNextTurn();
+                yield break;
+            }
+            else
+            {
+                gameUI.MassageText.text = ("敵は目を覚ました！");
+                yield return new WaitForSeconds(1.5f);
+            }
+        }
         //敵の攻撃
         ruleBook.EnemyAttack(player, enemy);
         if (player.Life <= 0)

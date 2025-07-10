@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu]
 public class EnemyBase : ScriptableObject
 {
+    public bool IsSleeping = false;
+    public int SleepTurn = 0;
+    public int PreviousLife;
     [Header("エネミーの種類")]
     [SerializeField] Sprite icon;
     [SerializeField] string Name;

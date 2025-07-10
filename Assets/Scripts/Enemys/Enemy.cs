@@ -36,6 +36,38 @@ public class Enemy : MonoBehaviour
         EnemyLifeContlloer = GetComponent<EnemyLifeContlloer>();
     }
 
+    public bool TrySleep(float rate)
+    {
+        if (Base.IsSleeping) return false;
 
+        if (Random.value < rate)
+        {
+            Base.IsSleeping = true;
+            Base.SleepTurn = 0;
+            return true;
+        }
+        return false;
+    }
+
+    public bool ContinueSleep(List<float> sleepRates)
+    {
+        if (!Base.IsSleeping) return false;
+
+        int index = Mathf.Clamp(Base.SleepTurn, 0, sleepRates.Count - 1);
+        float rate = sleepRates[index];
+        Base.SleepTurn++;
+
+        if (Random.value < rate)
+        {
+            return true; // 継続
+        }
+        else
+        {
+            Base.IsSleeping = false;
+            Base.SleepTurn = 0;
+            return false; // 起きた
+        }
+
+    }
 
 }
